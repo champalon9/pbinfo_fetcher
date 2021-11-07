@@ -25,8 +25,10 @@ for p in sys.argv[1:]:
 	try:
 		enunt = tree.get_element_by_id("enunt").text_content()
 	except:
-		raise SystemExit("The problem " + p + " does not exist!")
-
+		#raise SystemExit("The problem " + p + " does not exist!")
+		print("The problem " + p + " does not exist!")
+		continue
+		
 	enunt = enunt.replace("(adsbygoogle = window.adsbygoogle || []).push({});", "")
 	enunt = enunt.replace("\t","")
 	enunt = enunt.strip("\n")
